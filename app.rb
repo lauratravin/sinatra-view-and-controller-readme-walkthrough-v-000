@@ -1,14 +1,13 @@
 require_relative 'config/environment'
 
 class App < Sinatra::Base
-  get '/reverse' do
+  get '/reverse' do   # renders the reverse.erb
     erb :reverse
   end
 
-  post '/reverse' do
-  
+  post '/reverse' do  # renders the reversed.erb
     original_string = params[:string]
-     @reversed_string = original_string.reverse
+    @reversed_string = original_string.reverse
     erb :reversed
   end
 
